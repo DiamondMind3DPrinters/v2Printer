@@ -64,7 +64,7 @@ void epr_out_float(uint pos,PGM_P text) {
   OUT(epr_get_float(pos));
   OUT(' ');
   epr_out_prefix(pos);
-  out.println_P(text);  
+  out.println_P(text);
 }
 void epr_out_long(uint pos,PGM_P text) {
   OUT_P("EPR:2 ");
@@ -73,7 +73,7 @@ void epr_out_long(uint pos,PGM_P text) {
   OUT(epr_get_long(pos));
   OUT(' ');
   epr_out_prefix(pos);
-  out.println_P(text);  
+  out.println_P(text);
 }
 void epr_out_int(uint pos,PGM_P text) {
   OUT_P("EPR:1 ");
@@ -82,7 +82,7 @@ void epr_out_int(uint pos,PGM_P text) {
   OUT(epr_get_int(pos));
   OUT(' ');
   epr_out_prefix(pos);
-  out.println_P(text);  
+  out.println_P(text);
 }
 void epr_out_byte(uint pos,PGM_P text) {
   OUT_P("EPR:0 ");
@@ -91,7 +91,7 @@ void epr_out_byte(uint pos,PGM_P text) {
   OUT((int)epr_get_byte(pos));
   OUT(' ');
   epr_out_prefix(pos);
-  out.println_P(text);  
+  out.println_P(text);
 }
 
 void epr_update(GCode *com) {
@@ -123,7 +123,7 @@ void epr_eeprom_reset() {
   max_inactive_time = MAX_INACTIVE_TIME*1000L;
   stepper_inactive_time = STEPPER_INACTIVE_TIME*1000L;
   axis_steps_per_unit[0] = XAXIS_STEPS_PER_MM;
-  axis_steps_per_unit[1] = YAXIS_STEPS_PER_MM; 
+  axis_steps_per_unit[1] = YAXIS_STEPS_PER_MM;
   axis_steps_per_unit[2] = ZAXIS_STEPS_PER_MM;
   axis_steps_per_unit[3] = 1;
   max_feedrate[0] = MAX_FEEDRATE_X;
@@ -581,7 +581,7 @@ void epr_eeprom_to_data() {
 void epr_init_baudrate() {
 #if EEPROM_MODE!=0
   if(epr_get_byte(EPR_MAGIC_BYTE)==EEPROM_MODE) {
-    baudrate = epr_get_long(EPR_BAUDRATE);    
+    baudrate = epr_get_long(EPR_BAUDRATE);
   }
 #endif
 }
@@ -717,7 +717,7 @@ void epr_output_settings() {
     epr_out_float(o+EPR_EXTRUDER_ADVANCE_K,PSTR("advance K [0=off]"));
 #endif
     epr_out_float(o+EPR_EXTRUDER_ADVANCE_L,PSTR("advance L [0=off]"));
-#endif    
+#endif
   }
 #else
   out.println_P(PSTR("No EEPROM support compiled."));

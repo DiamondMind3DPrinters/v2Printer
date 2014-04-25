@@ -102,6 +102,7 @@ have problems with other modules using the eeprom */
 #define EPR_EXTRUDER_WAIT_RETRACT_TEMP 50
 #define EPR_EXTRUDER_WAIT_RETRACT_UNITS 52
 #define EPR_EXTRUDER_COOLER_SPEED       54
+
 #if EEPROM_MODE!=0
 
 extern inline void epr_set_byte(uint pos,byte value);
